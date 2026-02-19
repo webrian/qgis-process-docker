@@ -11,6 +11,6 @@ docker compose run --rm qgis_process
 ```
 
 * Run the simple demo model
-````
+```
 docker compose run --rm qgis_process run models/simple.model3 --input_csv=models/cities.csv --output=models/cities.shp
 ```
