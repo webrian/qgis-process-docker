@@ -1,0 +1,11 @@
+services:
+  qgis_process:
+    build: .
+    container_name: qgis_process
+    environment:
+      # See https://docs.qgis.org/3.40/en/docs/user_manual/processing/standalone.html#processing-standalone
+      QT_QPA_PLATFORM: offscreen
+      XDG_RUNTIME_DIR: /tmp/runtime-root
+      QGIS_CUSTOM_CONFIG_PATH: /app/share/QGIS/QGIS3/
+    volumes:
+      - ./models/:/app/models/
