@@ -4,7 +4,10 @@ FROM debian:trixie-slim as builder
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends \n        wget \n        unzip && \
+    apt-get install -y --no-install-recommends \
+        ca-certificates \
+        wget \
+        unzip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -21,7 +24,9 @@ FROM debian:trixie-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -y update && \
-    apt-get install -y --no-install-recommends \n        qgis \n        xvfb && \
+    apt-get install -y --no-install-recommends \
+        qgis \
+        xvfb && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
